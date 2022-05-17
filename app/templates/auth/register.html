@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+ {% block styles%}{{super()}}
+  <link
+    rel="stylesheet"
+    href="{{url_for('static',filename='css/style.css')}}"
+  />
+{%endblock%}
+{%import 'bootstrap/wtf.html' as wtf%}
+{%block content%}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="container-fluid " id= "registerFrm">
+          <h4 class="topicH">REGISTER</h4>
+        {{ wtf.quick_form(registration_form, button_map={'submit':'btn'}) }}
+         <p class="logsign">
+          Have an account?
+          <a style="color:#179fe3" href="{{url_for('auth.login')}}"
+            >Sign in here</a
+          >
+        </p>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+{%endblock%}
