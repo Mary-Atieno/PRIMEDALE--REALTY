@@ -17,13 +17,13 @@
         </div>
         {% endfor %}
         <!-- Login form -->
-        <h4 class="topicH">LOGIN</h4>
+        <h2 class="topicH">LOGIN</h2>
 
         {{ wtf.quick_form(login_form, button_map={'submit':'btn'}) }}
 
         <p class="logsign">
           Don't have an account?
-          <a style="color: #179fe3" href="{{url_for('auth.register')}}"
+          <a style="color: #0da4f0" href="{{url_for('auth.register')}}"
             >Sign up here</a
           >
         </p>
