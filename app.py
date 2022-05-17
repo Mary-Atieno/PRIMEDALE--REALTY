@@ -8,10 +8,10 @@ def index():
 
     return render_template("navbar.html")
 
-@app.route('/about')
+@app.route('/contact')
 def home():
 
-    return render_template("home.html")
+    return render_template("contact.html")
 
 
 if __name__ == "__main__":
