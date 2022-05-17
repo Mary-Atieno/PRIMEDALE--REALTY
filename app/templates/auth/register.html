@@ -12,11 +12,11 @@
       <div class="col-md-2"></div>
       <div class="col-md-8">
         <div class="container-fluid " id= "registerFrm">
-          <h4 class="topicH">REGISTER</h4>
+          <h2 class="topicH">REGISTER</h2>
         {{ wtf.quick_form(registration_form, button_map={'submit':'btn'}) }}
          <p class="logsign">
           Have an account?
-          <a style="color:#179fe3" href="{{url_for('auth.login')}}"
+          <a style="color:#0aa4f1" href="{{url_for('auth.login')}}"
             >Sign in here</a
           >
         </p>
