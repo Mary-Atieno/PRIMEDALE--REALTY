@@ -2,7 +2,7 @@ import os
 
 class Config:
     SECRET_KEY='secret'
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://abrighthuman:bright@localhost/primedale'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://abrighthuman:bright@localhost/primedalerealty'
     SQALCHEMY_TRACK_MODIFICATIONS = True
     # email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
@@ -27,7 +27,7 @@ DEBUG = True
 
 
 class DevConfig(Config):
-         SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://abrighthuman:bright@localhost/primedale'
+         SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://abrighthuman:bright@localhost/primedalerealty'
 
 DEBUG = True
 
