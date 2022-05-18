@@ -40,7 +40,7 @@ class Blog(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.DateTime, default=datetime.utcnow)
     title_blog = db.Column(db.String(255), index=True)
-    description = db.Column(db.String(255), index=True)(255)
+    description = db.Column(db.String(255), index=True)
     # user_id = db.Column(db.Integer, db.ForeignKey('users.id',ondelete='CASCADE'), nullable=False)
    
     def save_blog(self):
