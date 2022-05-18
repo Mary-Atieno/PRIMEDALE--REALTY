@@ -1,0 +1,48 @@
+{%extends 'base.html'%}
+
+{% block style %}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+{% block content %}
+
+{% block navbar %}
+{% include 'navbar.html'%}
+{% endblock %}
+
+
+
+<section class="contact">
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="box">
+        <div class="square" style="--i:0"></div>
+        <div class="square" style="--i:1"></div>
+        <div class="square" style="--i:2"></div>
+        <div class="square" style="--i:3"></div>
+        <div class="square" style="--i:4"></div>
+        <div class="container1">
+            <div class="form">
+                <h2>Contact Us</h2>
+                <form action="">
+                    <div class="inputBx">
+                        <input type="text" placeholder="Full Name">
+                    </div>
+                    <div class="inputBx">
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <div class="inputBx">
+                        <textarea name="message" id="" placeholder="Type Mesage Here..."></textarea>
+                    </div>
+                    <div class="inputBx">
+                        <input class="button" type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

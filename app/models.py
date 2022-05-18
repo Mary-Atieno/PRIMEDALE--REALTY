@@ -7,9 +7,8 @@ from datetime import datetime
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-class User(UserMixin,db.Model):
+class User(UserMixin, db.Model):
     __tablename__ = 'users'
-
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(85), nullable= False)
     email = db.Column(db.String(255), unique=True, index= True)
@@ -21,6 +20,9 @@ class User(UserMixin,db.Model):
 
     @property
     def password(self):
+    
+    @property
+    def password(self): 
         raise AttributeError('You cannot read the password attribute')
 
     @password.setter
@@ -76,3 +78,4 @@ class Comment(db.Model):
         db.session.commit()
     def __repr__(self):
         return f'Comments: {self.comment}'
+    

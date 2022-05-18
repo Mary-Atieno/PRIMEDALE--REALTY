@@ -6,9 +6,23 @@ from .forms import BlogForm, CommentForm
 from ..models import User, Blog, Comment
 from flask_login import login_required
 
+
 @main.route('/')
 def index():
-    return render_template('index.html')
+
+    return render_template("home.html")
+
+
+@main.route('/contact')
+def contact():
+
+    return render_template("contact.html")
+
+
+@main.route('/footer')
+def footer():
+
+    return render_template("footer.html")
 
 
 @main.route('/blog/new', methods=['GET', 'POST'])
