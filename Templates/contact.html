@@ -1,6 +1,17 @@
+{%extends 'base.html'%}
+
+{% block style %}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
 {% block content %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% block navbar %}
+{% include 'navbar.html'%}
+{% endblock %}
+
+
 
 <section class="contact">
     <div class="color"></div>
