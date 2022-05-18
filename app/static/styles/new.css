@@ -1,0 +1,24 @@
+*{
+    color: white;
+    background-image: url('https://images.pexels.com/photos/189333/pexels-photo-189333.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+#card2{
+    padding: 150px;
+    color: black;
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px;
+    margin: 100px;
+}
+#bt1{
+    background-color: #ff7734;
+    padding: 10px;
+    margin-bottom: -500px;
+    border-style: hidden;
+}
+.edit{
+    font-size: 15px;
+}
