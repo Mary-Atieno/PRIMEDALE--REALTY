@@ -32,7 +32,7 @@ DEBUG = True
 class DevConfig(Config):
          SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://abrighthuman:bright@localhost/primes'
 
-DEBUG = True
+
 
 # class TestConfig(Config):
 #     pass

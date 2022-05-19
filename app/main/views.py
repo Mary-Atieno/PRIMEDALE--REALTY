@@ -88,17 +88,17 @@ def update():
 
 
 
-@main.route("/image",methods=["POST","GET"])
-def uploadimage():
-    frm=UploadForm()
-    if frm.validate_on_submit():
-        file=request.files["file"]
-        file.save(os.path.join(app.config["UPLOAD_FOLDER"],secure_filename(file.filename)))
-        upload=Images(name=secure_filename(file.filename))
-        db.session.add(upload)
-        db.session.commit()
-        return redirect(url_for("main.viewimage"))
-    return render_template("image.html",form=frm)  
+# @main.route("/image",methods=["POST","GET"])
+# def uploadimage():
+#     frm=UploadForm()
+#     if frm.validate_on_submit():
+#         file=request.files["file"]
+#         file.save(os.path.join(app.config["UPLOAD_FOLDER"],secure_filename(file.filename)))
+#         upload=Images(name=secure_filename(file.filename))
+#         db.session.add(upload)
+#         db.session.commit()
+#         return redirect(url_for("main.viewimage"))
+#     return render_template("image.html",form=frm)  
 
 @main.route("/allimages",methods=["POST","GET"])
 def viewallimages():

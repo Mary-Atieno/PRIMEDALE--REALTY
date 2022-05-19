@@ -4,21 +4,6 @@ body{
     background-image: url('https://d32ex7notsszg6.cloudfront.net/uploads/blogs/phpzBsUFw_60252df04fe10.jpg');
     color: white;
 } 
-.navbar-inverse{
-    background-color: #023047;
-} 
-.navbar {
-    background-color: #023047;
-    padding-left: 5vw;
-    color: white;
-    font-weight: bold;
-}
-/* form.form{
-    border-radius: 10px;
-} */
-.navbar-collapse {
-    padding-left: 40vw;
-}
 
 #registerFrm,
 #loginFrm {
