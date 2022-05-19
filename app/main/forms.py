@@ -11,6 +11,7 @@ class ViewingForm(FlaskForm):
 
 class UploadForm(FlaskForm):
     file=FileField('Add a File',validators=[DataRequired()])
-    # name = StringField('Enter house name',validators=[DataRequired()])
-    # description = StringField('Describe your listing',validators=[DataRequired()])
+    name = StringField('Enter house name',validators=[DataRequired()])
+    description = StringField('Describe your listing',validators=[DataRequired()])
+    price = StringField('Give price in dollars',validators=[DataRequired()])
     submt=SubmitField('Upload')

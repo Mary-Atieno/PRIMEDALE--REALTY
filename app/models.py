@@ -30,6 +30,9 @@ class House(db.Model):
 class Photo(db.Model):
     __tablename__='photos'
     id=db.Column(db.Integer,primary_key=True)
+    name=db.Column(db.String(200))
+    description=db.Column(db.String(200))
+    price=db.Column(db.String(200))
     photo_path=db.Column(db.String())
 
     def save_photo(self):

@@ -11,7 +11,9 @@
                 It is ready for the next owners to
                 bring it into the 21st century.</p>
 
-                <p class="edit1">House Name:</p>
+                <p class="edit1">House Name: Beach House</p>
+                <p class="edit1">Price: $2,000,000</p>
+
 
 
                     <button class="bt1"><a href="/viewing">Arrange A viewing</a></button>
@@ -28,7 +30,9 @@
             It is ready for the next owners to
             bring it into the 21st century.</p>
 
-            <p class="edit1">House Name:</p>
+            <p class="edit1">House Name: Condo</p>
+            <p class="edit1">Price: $2,000,000</p>
+
 
 
             <button class="bt1"><a href="/viewing">Arrange A viewing</a></button>
@@ -45,7 +49,9 @@
             It is ready for the next owners to
             bring it into the 21st century.</p>
 
-            <p class="edit1">House Name:</p>
+            <p class="edit1">House Name: Beach House</p>
+            <p class="edit1">Price: $2,000,000</p>
+
 
 
             <button class="bt1"><a href="/viewing">Arrange A viewing</a></button>
@@ -62,7 +68,9 @@
             It is ready for the next owners to
             bring it into the 21st century.</p>
 
-            <p class="edit1">House Name:</p>
+            <p class="edit1">House Name: Town House</p>
+            <p class="edit1">Price: $2,000,000</p>
+
 
             <button class="bt1"><a href="/viewing">Arrange A viewing</a></button>
             <button class="bt1"><a href="/newrental">Make a listing</a></button>
@@ -78,7 +86,8 @@
             It is ready for the next owners to
             bring it into the 21st century.</p>
 
-            <p class="edit1">House Name:</p>
+            <p class="edit1">House Name: Town House</p>
+            <p class="edit1">Price: $2,000,000</p>
 
 
             <button class="bt1"><a href="/viewing">Arrange A viewing</a></button>
@@ -95,7 +104,9 @@
             It is ready for the next owners to
             bring it into the 21st century.</p>
 
-            <p class="edit1">House Name:</p>
+            <p class="edit1">House Name: Mansion</p>
+            <p class="edit1">Price: $2,000,000</p>
+
 
 
             <button class="bt1"><a href="/viewing">Arrange A viewing</a></button>
@@ -112,7 +123,9 @@
             It is ready for the next owners to
             bring it into the 21st century.</p>
 
-            <p class="edit1">House Name:</p>
+            <p class="edit1">House Name: Town House</p>
+            <p class="edit1">Price: $2,000,000</p>
+
 
 
             <button class="bt1"><a href="/viewing">Arrange A viewing</a></button>
@@ -123,15 +136,14 @@
 {% for photo in photos %}
 
 <div class ="mains">
-    <img src="{{url_for('static', filename = photo.photo_path)}}" alt="This is the image" srcset="" id="imgs">
+    <img src="{{url_for('static', filename = 'photos/'+ photo.photo_path)}}" alt="This is the image" srcset="" id="imgs">
     <div class = "card" id="card1">
         <p class ="edit">Description</p>
-        <p class="edit1">This single-owner home sits on
-            a large lot with mature trees.
-            It is ready for the next owners to
-            bring it into the 21st century.</p>
+        <p class="edit1">{{photo.description}}</p>
 
-            <p class="edit1">House Name:</p>
+            <p class="edit1">House Name:{{photo.name}}</p>
+            <p class="edit1">Price:{{photo.price}} </p>
+
 
 
             <button class="bt1"><a href="/viewing">Arrange A viewing</a></button>
