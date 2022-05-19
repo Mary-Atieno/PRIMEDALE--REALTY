@@ -1,0 +1,53 @@
+
+{% extends 'base.html' %}
+
+{% block style %}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<footer class="footer">
+    <div class="top">
+        <h3>Get connected with us on social media</h3>
+    </div>
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Property Listing</a></li>
+                            <li><a href="#">Rentals</a></li>
+                            <li><a href="#">Air BnB</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Primedale Reality</h3>
+                        <ul>
+                            <li><a href="#">Albright Sunguti</a></li>
+                            <li><a href="#">Brian Masafu</a></li>
+                            <li><a href="#">Maureen Gichuki</a></li>
+                            <li><a href="#">Mary Atieno</a></li>
+                            <li><a href="#">Kate Vanili</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text" >
+                        <p>A family company running from the 1890s with a show of credibility in the business of
+                            property
+                            handling, listing and selling.</p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
+                                class="icon ion-social-twitter"></i></a><a href="#"><i
+                                class="icon ion-social-snapchat"></i></a><a href="#"><i
+                                class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Primedale Reality © 2022</p>
+            </div>
+        </footer>
+    </div>
+
+</footer>
+{% endblock %}

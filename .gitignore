@@ -1,2 +1,7 @@
 virtual/
 *.pyc
+instance/
+*.sh
+__pycache__/
+.env
+env
