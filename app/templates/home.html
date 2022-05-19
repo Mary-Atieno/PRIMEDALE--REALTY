@@ -3,7 +3,7 @@
 
 {% block style %}
 {{super()}}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 {% endblock %}
 
 
@@ -14,13 +14,13 @@
 {% include 'navbar.html'%}
 {% endblock %}
 
-<img src="{{ url_for('static', filename= 'house2.jpg')}}" style="height:80vh; width:100%;">
+<img src="{{ url_for('static', filename='images/home/house2.jpg')}}" style="height:80vh; width:100%;">
 <section class="container">
   
     <h2 style="margin-left:500px"> ABOUT US</h2>
     <div class="row">
       <div class="col-4 img">
-        <img src="{{ url_for('static', filename= 'house1.jpg')}}">
+        <img src="{{ url_for('static', filename= 'images/home/house1.jpg')}}">
       </div>
       <div class="col-8 about">
         <p>At Primedale reality, you are number one. Whether you are a property owner, tenant, or buyer, we value your
@@ -50,7 +50,7 @@
 
           <div class="col-4">
             <div class="card" style="width: 18rem;">
-              <img src="{{ url_for('static', filename= 'house3.jpg')}}" class="d-block w-100">
+              <img src="{{ url_for('static', filename= 'images/home/house3.jpg')}}" class="d-block w-100">
               <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                   card's
@@ -61,7 +61,7 @@
 
           <div class="col-4">
             <div class="card" style="width: 18rem;">
-              <img src="{{ url_for('static', filename= 'house4.jpg')}}" class="d-block w-100">
+              <img src="{{ url_for('static', filename= 'images/home/house4.jpg')}}" class="d-block w-100">
               <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                   card's
@@ -72,7 +72,7 @@
 
           <div class="col-4">
             <div class="card" style="width: 18rem;">
-              <img src="{{ url_for('static', filename= 'house5.jpg')}}" class="d-block w-100">
+              <img src="{{ url_for('static', filename= 'images/home/house5.jpg')}}" class="d-block w-100">
               <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                   card's
@@ -90,7 +90,7 @@
 
           <div class="col-4">
             <div class="card" style="width: 18rem;">
-              <img src="{{ url_for('static', filename= 'house6.jpg')}}" class="d-block w-100">
+              <img src="{{ url_for('static', filename= 'images/home/house6.jpg')}}" class="d-block w-100">
               <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                   card's
@@ -101,7 +101,7 @@
 
           <div class="col-4">
             <div class="card" style="width: 18rem;">
-              <img src="{{ url_for('static', filename= 'house7.jpg')}}" class="d-block w-100">
+              <img src="{{ url_for('static', filename= 'images/home/house7.jpg')}}" class="d-block w-100">
               <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                   card's

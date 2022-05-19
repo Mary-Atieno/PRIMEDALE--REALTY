@@ -2,10 +2,11 @@ from . import db, login_manager
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 from datetime import datetime
+from sqlalchemy.orm import backref
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
+        return User.query.get(int(user_id))
 
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
@@ -18,9 +19,6 @@ class User(UserMixin, db.Model):
     # comments = db.relationship('Comment', backref ='user' , passive_deletes=True,  lazy ="dynamic")
     
 
-    @property
-    def password(self):
-    
     @property
     def password(self): 
         raise AttributeError('You cannot read the password attribute')
