@@ -1,4 +1,3 @@
-
 {%extends 'base.html'%}
 
 {% block style %}
@@ -14,7 +13,7 @@
   <section id="navv">
     <nav class="navbar fixed-top navbar-expand-lg navbar-light">
       <div class="container-fluid">
-        <a class="navbar-brand logo" href="#">PRIMEDALE REALITY</a>
+        <a class="navbar-brand logo" href="#">PRIMEDALE REALTY</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -47,7 +46,7 @@
       </div>
     </nav>
 
-    
+
 
   </section>
 </div>
@@ -85,26 +84,23 @@
 
 
 <navbar class="nav">
-    <li class="nav-item">
-        <a href="{{url_for('main.index')}}" class="nav-link"><span style="font-family: 'Lobster', cursive;">Home</span> </a>
-    </li>
-    <li class="nav-item">
-        <a href="{{url_for('main.theblog')}}" class="nav-link"><span style="font-family: 'Lobster', cursive;">Blogs</span></a>
-    </li>
-    <li class="nav-item">
-        <a href="{{url_for('main.blogs')}}" class="nav-link"><span style="font-family: 'Lobster', cursive;">Add blog</span></a>
-    </li>
+  <li class="nav-item">
+    <a href="{{url_for('main.index')}}" class="nav-link"><span style="font-family: 'Lobster', cursive;">Home</span> </a>
+  </li>
+  <li class="nav-item">
+    <a href="{{url_for('main.theblog')}}" class="nav-link"><span
+        style="font-family: 'Lobster', cursive;">Blogs</span></a>
+  </li>
+  <li class="nav-item">
+    <a href="{{url_for('main.blogs')}}" class="nav-link"><span style="font-family: 'Lobster', cursive;">Add
+        blog</span></a>
+  </li>
 </navbar>
 {%block navbar%}
 <div class="navbar navbar-inverse" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button
-        type="button"
-        class="navbar-toggle"
-        data-toggle="collapse"
-        data-target=".navbar-collapse"
-      >
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
