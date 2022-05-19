@@ -2,7 +2,7 @@ import os
 
 class Config:
     SECRET_KEY='secret'
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://abrighthuman:bright@localhost/primedalerealty'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://abrighthuman:bright@localhost/prime'
     SQALCHEMY_TRACK_MODIFICATIONS = True
     # email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
@@ -10,6 +10,7 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
+    UPLOAD_FOLDER = 'app/static/uploads'
 
 
     @staticmethod
@@ -27,7 +28,7 @@ DEBUG = True
 
 
 class DevConfig(Config):
-         SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://abrighthuman:bright@localhost/primedalerealty'
+         SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://abrighthuman:bright@localhost/prime'
 
 DEBUG = True
 

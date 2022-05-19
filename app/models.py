@@ -15,9 +15,12 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(255), unique=True, index= True)
     pass_secure = db.Column(db.String(255))
     bio = db.Column(db.String(255))
+    password=db.Column(db.String(40),nullable=False)
+    postman=db.relationship('Post',backref="postman")
     # blogs = db.relationship('Blog', backref ='user', passive_deletes=True,lazy = "dynamic")
-    # comments = db.relationship('Comment', backref ='user' , passive_deletes=True,  lazy ="dynamic")
-    
+    comments = db.relationship('Comment', backref ='user' , passive_deletes=True,  lazy ="dynamic")
+   
+
 
     @property
     def password(self): 
@@ -62,7 +65,7 @@ class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     comment = db.Column(db.Text())
     blog_id = db.Column(db.Integer, db.ForeignKey('blogs.id',ondelete='CASCADE'))
-    # user_id = db.Column(db.Integer, db.ForeignKey('users.id',ondelete='CASCADE'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id',ondelete='CASCADE'))
     date = db.Column(db.DateTime, default=datetime.utcnow)
     def save_comment(self):
         db.session.add(self)
@@ -77,3 +80,27 @@ class Comment(db.Model):
     def __repr__(self):
         return f'Comments: {self.comment}'
     
+class posts(db.Model):
+    id = db.Column(db.String, primary_key = True)
+    blogs = db.Column(db.String(50) , primary_key = False)
+    post = db.Column(db.String(50), primary_key = False)
+
+
+
+class postss(db.Model):
+    id = db.Column(db.Integer,primary_key = True)
+    title = db.Column(db.String(25),nullable =False) 
+    post = db.Column(db.String(50),nullable =False)
+    poster=db.Column(db.Integer,db.ForeignKey('users.id'))
+    poster=db.Column(db.Integer,db.ForeignKey('users.id'))
+
+class Post(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    title=db.Column(db.String(50),nullable=False)
+    post=db.Column(db.String(700),nullable=False)
+    poster=db.Column(db.Integer,db.ForeignKey('users.id'))
+
+class Images(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    name=db.Column(db.String(50),nullable=False)
+    uploader_id=db.Column(db.Integer,db.ForeignKey('users.id'))
