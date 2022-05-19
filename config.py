@@ -1,8 +1,9 @@
 import os
 
 class Config:
+
     SECRET_KEY='secret'
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://abrighthuman:bright@localhost/prime'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://abrighthuman:bright@localhost/primes'
     SQALCHEMY_TRACK_MODIFICATIONS = True
 
     # email configurations
@@ -29,7 +30,7 @@ DEBUG = True
 
 
 class DevConfig(Config):
-         SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://abrighthuman:bright@localhost/prime'
+         SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://abrighthuman:bright@localhost/primes'
 
 DEBUG = True
 

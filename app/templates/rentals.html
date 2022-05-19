@@ -1,4 +1,6 @@
-<link rel ="stylesheet" type="text/css" href="{{url_for('static', filename='styles/index.css')}}">
+{%block content%}
+{%block navbar%}{%include 'navbar.html'%}{%endblock%}
+<link rel ="stylesheet" type="text/css" href="{{url_for('static', filename='css/rentals.css')}}">
 <div>
     <div class="main">
     <p class="edit4">Available Listings</p>
@@ -160,3 +162,4 @@
     <p class="edit3">PrimeDaleRealty@reallygreatsite.com</p>
 </div>
 </div>
+{% endblock %}
