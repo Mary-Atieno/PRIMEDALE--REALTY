@@ -1,0 +1,16 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+<link rel ="stylesheet" type="text/css" href="{{url_for('static', filename='styles/new.css')}}">
+<p class="edit"> Arrange A Viewing </p>
+
+    <div class="main">
+
+      <div class="card" id="card2">
+
+            {{ wtf.quick_form(viewing_form) }}
+       
+        </div>
+
+    </div>
+

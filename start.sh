@@ -1,6 +1,6 @@
-export SECRET_KEY= 'secret'
-export MAIL_USERNAME='maryatieno@gmail.com'
-export MAIL_PASSWORD='4567'
+# export SECRET_KEY= 'secret'
+# export MAIL_USERNAME='sungutialbright@gmail.com'
+# export MAIL_PASSWORD='travisasutsa01'
 
 export FLASK_APP='app:create_app("development")'
 # change the command from server to run

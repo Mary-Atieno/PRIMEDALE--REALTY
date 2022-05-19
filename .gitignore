@@ -3,3 +3,5 @@ virtual/
 instance/
 *.sh
 __pycache__/
+.env
+env

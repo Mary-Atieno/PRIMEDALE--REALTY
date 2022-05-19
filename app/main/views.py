@@ -3,15 +3,23 @@ from flask_login import LoginManager, UserMixin,current_user,login_manager
 from .. import db
 from . import main
 from .forms import BlogForm, CommentForm,PostForm,UserForm,UpdateForm,RegisterFrm,UploadForm
-from ..models import Images, User, Blog, Comment, Post, postss
+from ..models import Images, User, Blog, Comment, Post, postss, House, Photo
 from flask_login import login_required
 from werkzeug.utils import secure_filename
 import os
+from werkzeug.datastructures import  FileStorage
+from fileinput import filename
+from pathlib import Path
+from unicodedata import name
+from config import Config
+from .forms import ViewingForm, UploadForm
+from ..email import mail_message
 from app import create_app
 
 
 app=create_app('development')
 
+#####KATE####
 @main.route('/')
 def index():
 
@@ -28,6 +36,7 @@ def footer():
 
     return render_template("footer.html")
 
+#####ALBRIGHT####
 
 @main.route('/blog/new', methods=['GET', 'POST'])
 
@@ -52,7 +61,7 @@ def theblog():
     blogs = Blog.query.all()
     return render_template('myblogs.html', blogs=blogs)
 
-
+#####BRIAN####
 
 @main.route('/display')
 def display():
@@ -100,6 +109,53 @@ def viewallimages():
 def viewimage():
     allimages=Images.query.all()
     return render_template("imageview.html",images = allimages)
+
+    #####MAUREEN#####
+@main.route('/rentals')
+def rental():
+    return render_template('rentals.html')
+
+@main.route('/newrental', methods= ['GET','POST'])
+def newental():
+
+    form=UploadForm()
+
+    if form.validate_on_submit():
+
+        photo_path=form.file.data
+        name=form.name.data
+        description=form.description.data
+        price=form.price.data
+        photo_path.save(os.path.join(Config.UPLOADED_PHOTOS_DEST,secure_filename(photo_path.filename)))
+        filename= secure_filename(photo_path.filename)
+        photo_obj = Photo(photo_path=filename, name=name,description=description,price=price)
+        photo_obj.save_photo()
+      
+        return redirect(url_for("main.rental"))
+
+    return render_template("newrental.html",upload_form=form)
+
+
+@main.route('/viewing', methods= ['GET','POST'])
+def viewing():
+
+    form=ViewingForm()
+
+    if form.validate_on_submit():
+
+        house=House(name=form.name.data,house=form.house.data,time=form.time.data, email=form.email.data)
+
+        db.session.add(house)
+        db.session.commit()
+
+        mail_message("PrimeDale Realty","email/welcome", house.email)
+
+
+        return redirect(url_for('main.rental'))
+
+    return render_template('viewing.html',viewing_form=form)
+
+    ####UNUSED####
 
 # @main.route('/Update/<int:id>', methods=['GET', 'POST'])
 # @login_required
@@ -154,3 +210,4 @@ def viewimage():
 #     db.session.commit()
 #     flash('comment succesfully deleted')
 #     return redirect (url_for('main.theblog'))
+

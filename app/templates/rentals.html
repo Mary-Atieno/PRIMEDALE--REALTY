@@ -1,0 +1,162 @@
+<link rel ="stylesheet" type="text/css" href="{{url_for('static', filename='styles/index.css')}}">
+<div>
+    <div class="main">
+    <p class="edit4">Available Listings</p>
+    <div class ="mains">
+        <img src ="https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"id ="imgs">
+        <div class = "card" id="card1">
+            <p class="edit">Description</p>
+            <p class="edit1">This single-owner home sits on
+                a large lot with mature trees.
+                It is ready for the next owners to
+                bring it into the 21st century.</p>
+
+                <p class="edit1">House Name: Beach House</p>
+                <p class="edit1">Price: $2,000,000</p>
+
+
+
+                    <button class="bt1"><a href="/viewing">Arrange a viewing</a></button>
+                    <button class="bt1"><a href="/newrental">Make a listing</a></button>
+        </div>
+        
+    </div>
+<div class ="mains">
+    <img src ="https://images.pexels.com/photos/592636/pexels-photo-592636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" id ="imgs">
+    <div class = "card" id="card1">
+        <p class ="edit">Description</p>
+        <p class="edit1">This single-owner home sits on
+            a large lot with mature trees.
+            It is ready for the next owners to
+            bring it into the 21st century.</p>
+
+            <p class="edit1">House Name: Condo</p>
+            <p class="edit1">Price: $2,000,000</p>
+
+
+
+            <button class="bt1"><a href="/viewing">Arrange a viewing</a></button>
+            <button class="bt1"><a href="/newrental">Make a listing</a></button>
+    </div>
+   
+</div>
+<div class ="mains">
+    <img src ="https://images.pexels.com/photos/323775/pexels-photo-323775.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"id ="imgs">
+    <div class = "card" id="card1">
+        <p class="edit">Description</p>
+        <p class="edit1">This single-owner home sits on
+            a large lot with mature trees.
+            It is ready for the next owners to
+            bring it into the 21st century.</p>
+
+            <p class="edit1">House Name: Beach House</p>
+            <p class="edit1">Price: $2,000,000</p>
+
+
+
+            <button class="bt1"><a href="/viewing">Arrange a viewing</a></button>
+            <button class="bt1"><a href="/newrental">Make a listing</a></button>
+    </div>
+    
+</div>
+<div class ="mains">
+    <img src ="https://images.pexels.com/photos/415687/pexels-photo-415687.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" id ="imgs">
+    <div class = "card" id="card1">
+        <p class="edit">Description</p>
+        <p class="edit1">This single-owner home sits on
+            a large lot with mature trees.
+            It is ready for the next owners to
+            bring it into the 21st century.</p>
+
+            <p class="edit1">House Name: Town House</p>
+            <p class="edit1">Price: $2,000,000</p>
+
+
+            <button class="bt1"><a href="/viewing">Arrange a viewing</a></button>
+            <button class="bt1"><a href="/newrental">Make a listing</a></button>
+    </div>
+    
+</div>
+<div class ="mains">
+    <img src ="https://images.pexels.com/photos/7475605/pexels-photo-7475605.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" id ="imgs">
+    <div class = "card" id="card1">
+        <p class="edit">Description</p>
+        <p class="edit1">This single-owner home sits on
+            a large lot with mature trees.
+            It is ready for the next owners to
+            bring it into the 21st century.</p>
+
+            <p class="edit1">House Name: Town House</p>
+            <p class="edit1">Price: $2,000,000</p>
+
+
+            <button class="bt1"><a href="/viewing">Arrange a viewing</a></button>
+            <button class="bt1"><a href="/newrental">Make a listing</a></button>
+    </div>
+  
+</div>
+<div class ="mains">
+    <img src ="https://images.pexels.com/photos/7031596/pexels-photo-7031596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" id ="imgs">
+    <div class = "card" id="card1">
+        <p class="edit">Description</p>
+        <p class="edit1">This single-owner home sits on
+            a large lot with mature trees.
+            It is ready for the next owners to
+            bring it into the 21st century.</p>
+
+            <p class="edit1">House Name: Mansion</p>
+            <p class="edit1">Price: $2,000,000</p>
+
+
+
+            <button class="bt1"><a href="/viewing">Arrange a viewing</a></button>
+            <button class="bt1"><a href="/newrental">Make a listing</a></button>
+    </div>
+  
+</div>
+<div class ="mains">
+    <img src ="https://images.pexels.com/photos/323781/pexels-photo-323781.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" id ="imgs">
+    <div class = "card" id="card1">
+        <p class ="edit">Description</p>
+        <p class="edit1">This single-owner home sits on
+            a large lot with mature trees.
+            It is ready for the next owners to
+            bring it into the 21st century.</p>
+
+            <p class="edit1">House Name: Town House</p>
+            <p class="edit1">Price: $2,000,000</p>
+
+
+
+            <button class="bt1"><a href="/viewing">Arrange a viewing</a></button>
+            <button class="bt1"><a href="/newrental">Make a listing</a></button>
+    </div>
+  
+</div>
+
+
+{% for photo in photos %}
+
+<div class ="mains">
+    <img src="{{url_for('static', filename = 'photos/'+ photo.photo_path)}}" alt="This is the image" srcset="" id="imgs">
+    <div class = "card" id="card1">
+        <p class ="edit">Description</p>
+        <p class="edit1">{{photo.description}}</p>
+
+            <p class="edit1">House Name:{{photo.name}}</p>
+            <p class="edit1">Price:{{photo.price}} </p>
+
+
+
+            <button class="bt1"><a href="/viewing">Arrange a viewing</a></button>
+            <button class="bt1"><a href="/newrental">Make a listing</a></button>
+    </div>
+</div>
+
+{% endfor %}
+
+<div class="ft">
+    <p class="edit2">Contact Us At</p>
+    <p class="edit3">PrimeDaleRealty@reallygreatsite.com</p>
+</div>
+</div>

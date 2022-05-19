@@ -1,0 +1,14 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+<link rel ="stylesheet" type="text/css" href="{{url_for('static', filename='styles/new.css')}}">
+<p class="edit"> Submit A New Listing </p>
+    <div class="main">
+
+      <div class="card" id="card2">
+
+            {{ wtf.quick_form(upload_form) }}
+       
+        </div>
+
+    </div>
