@@ -2,34 +2,42 @@
 
 {%block content%}
 
-<div class="container" style="margin:5rem; background-color: #023047">
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock %}
+
+
+
+<div class="container" style="box-shadow: 0 4px 8px 0 rgba(15, 14, 14, 0.87); color: whitesmoke; background-color: #023047; border-radius: 5px;  margin-top: 100px; ">
+    <h2 style=" font-weight: 900;">REALTOR BLOGS</h2>
+
     <div class="row">
-        <div class="col-md-5">
-            <h1 style="font: size 30px; color: #fff; font-weight:bold; text-align:center; ">REAL ESTATE </h1>
-            <h1 style="font: size 30px; color: #fff; font-weight:bold; text-align:center; ">BLOGS</h1>
+        <div class="col-md-4">
+            <img src=" {{ url_for('static', filename= 'images/home/house7.jpg')}}" class="d-block w-100" style="height:350px">
         </div>
-        <div class="col-md-7">
-            <img src="../static/images/blog/Rental-Scams1-1024x523.jpg" alt="image of house">
+        <div class="col-md-4">
+            {%for blog in blogs%}
+            <h4 style="font-weight: 900;"><u>{{blog.title_blog}}</u></h4>
+            <p>{{blog.description}}</p>
+            <p class="date text-muted" style="font-weight:900">Posted on ~ {{blog.date.strftime('%Y-%m-%d')}}</p>
+
+
+            <!-- {% if blog.user == current_user%}
+                            <a href="{{url_for('main.view', id=blog.id)}}"><i class="fas fa-comment fa-fw"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                              <a href="{{url_for('main.delete', id=blog.id)}}"><i class="fas fa-trash-alt fa-fw"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="{{url_for('main.update_blog', id=blog.id)}}"><i class="fas fa-marker fa-fw"></i></a>
+                        {% endif %} -->
+
+
+            {%endfor%}
         </div>
+
     </div>
-    <div class="row">
-        {%for blog in blogs%}
-        <div class=" col-md-12">
-            <div class="panel text-center" style="box-shadow: 0 4px 8px 0 rgba(15, 14, 14, 0.87);">
-                <div class="panel-head text-info">
-                    <h3 style="color: #fB8500" >{{blog.title_blog}}</h3>
-                </div>
-                <hr>
-                <div class="panel-body" >
-                    <p>{{blog.description}}</p>                   
-                </div>
-                <div class="panel-footer">
-                    <p class="date text-muted">Posted on ~ {{blog.date.strftime('%Y-%m-%d')}}</p>
-                </div>
-            </div>
-        </div>
-        {%endfor%}
-    </div>
+
+
 </div>
+
+
+
 {%endblock%}
 
