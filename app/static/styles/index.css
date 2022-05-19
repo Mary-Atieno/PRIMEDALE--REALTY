@@ -12,6 +12,9 @@
 .navbar li{
     list-style: none;
 }
+a{
+    text-decoration: none;
+}
 .mains{
     display: flex;
     flex-direction: row;
