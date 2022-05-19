@@ -133,7 +133,9 @@
     </div>
   
 </div>
-{% for photo in photo %}
+
+
+{% for photo in photos %}
 
 <div class ="mains">
     <img src="{{url_for('static', filename = 'photos/'+ photo.photo_path)}}" alt="This is the image" srcset="" id="imgs">
