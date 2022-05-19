@@ -1,9 +1,13 @@
+from fileinput import filename
+from pathlib import Path
 from flask import Flask,render_template, request
 import os
-from .. import db, photos
+from config import Config
+from .. import db
 from .forms import ViewingForm, UploadForm
 from flask import render_template,redirect,url_for
 from werkzeug.utils import secure_filename
+from werkzeug.datastructures import  FileStorage
 from . import main
 from ..models import House, Photo
 from ..email import mail_message
@@ -22,14 +26,13 @@ def newental():
 
     if form.validate_on_submit():
 
-
-        file=request.files["file"]
-        file = form.file.data
-        file.save(os.path.join(["UPLOADED_PHOTOS_DEST"],secure_filename(file.filename)))
-        photo=Photo(name=secure_filename(file.filename))
-        db.session.add(photo)
-        db.session.commit()
-        return redirect(url_for("rentals"))
+        photo_path=form.file.data
+        photo_path.save(os.path.join(Config.UPLOADED_PHOTOS_DEST,secure_filename(photo_path.filename)))
+        filename= secure_filename(photo_path.filename)
+        photo_obj = Photo(photo_path=filename)
+        photo_obj.save_photo()
+      
+        return redirect(url_for("main.rental"))
 
     return render_template("newrental.html",upload_form=form)
 

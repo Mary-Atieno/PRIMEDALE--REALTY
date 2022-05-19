@@ -120,9 +120,10 @@
     </div>
   
 </div>
-{% for photo in photo %}
+{% for photo in photos %}
+
 <div class ="mains">
-    <img src="{{url_for('static', filename= '/photos/' + photo.name)}}" alt="This is the image" srcset="" id="imgs">
+    <img src="{{url_for('static', filename = photo.photo_path)}}" alt="This is the image" srcset="" id="imgs">
     <div class = "card" id="card1">
         <p class ="edit">Description</p>
         <p class="edit1">This single-owner home sits on
@@ -137,7 +138,8 @@
             <button class="bt1"><a href="/newrental">Make a listing</a></button>
     </div>
 </div>
- {% endfor %}
+
+{% endfor %}
 
 <div class="ft">
     <p class="edit2">Contact Us At</p>

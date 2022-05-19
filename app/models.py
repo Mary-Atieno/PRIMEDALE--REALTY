@@ -28,8 +28,9 @@ class House(db.Model):
         return f'House {self.house}'
 
 class Photo(db.Model):
+    __tablename__='photos'
     id=db.Column(db.Integer,primary_key=True)
-    # name=db.Column(db.String(50),nullable=False)
+    photo_path=db.Column(db.String())
 
     def save_photo(self):
         db.session.add(self)
@@ -37,9 +38,9 @@ class Photo(db.Model):
 
     @classmethod
     def get_photos(cls,id):
-        photos = Photo.query.filter_by(id=id).first()
-        return photos
+        photo = Photo.query.filter_by(id=id).first()
+        return photo
 
     def __repr__(self):
-        return f'Photo {self.name}'
+        return f'Photo {self.photo}'
 
