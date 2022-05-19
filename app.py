@@ -16,23 +16,7 @@ from wtforms.validators import DataRequired
 from wtforms import StringField,SubmitField,PasswordField,FileField,TextAreaField,EmailField
 from wtforms.validators import DataRequired
 
-import os
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+import os  
 from signal import valid_signals
 from flask import Flask, flash, redirect, render_template,request, url_for,session
 from flask_sqlalchemy import SQLAlchemy
