@@ -1,8 +1,8 @@
 export SECRET_KEY= 'secret'
-export MAIL_USERNAME='sungutialbright@gmail.com'
-export MAIL_PASSWORD='travisasutsa01'
+export MAIL_USERNAME='mimowaruguru@gmail.com'
+export MAIL_PASSWORD='Mangojuice@54'
 
-export FLASK_APP='app:create_app("development")'
+export FLASK_APP='app:create_app("production")'
 # change the command from server to run
 python manage.py run
 
